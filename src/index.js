@@ -1,12 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { render } from 'react-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import Map from './components/Map';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const center = {
+    lat: 47.6062095,
+    lng: -122.3320708 
+};
+
+render(
+    <Map 
+        app_id="YOUR_APP_ID"
+        app_code="YOUR_APP_CODE"
+        center={center}
+        zoom={14}
+    />,
+    document.getElementById('root')
+)
